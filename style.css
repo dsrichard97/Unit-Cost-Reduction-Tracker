@@ -1,388 +1,164 @@
-/* SOme Notes:
-- works better with svg logos (I use png here).
-- you can add some swipe for the mobile user using this nice plugin:
-https://joanclaret.github.io/slide-and-swipe-menu/
-*/
-/* 
-==================================================
-- Settings for universal selector 
-==================================================
-*/
-*{
-  margin:0;
-  padding:0;
+/* ==================================================
+   UNIVERSAL SETTINGS
+================================================== */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* 
-==================================================
-- main body
-==================================================
-*/
-html {
+html, body {
   min-height: 100%;
-}
-
-body {
-    background-color:  #e0e0d1;
-    /* height just for the demo to scroll*/
-    min-height: 100%;
-    position:relative;
+  background-color: #ffffff;
+  color: #001f3f;
+  font-family: sans-serif;
 }
 
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 .clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
 
-/* 
-==================================================
-- h , p
-==================================================
-*/
-/* Just for the example */
-h1 {
-    font-family: sans-serif;
-    color: #660066;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    font-size: 1.5em;
+/* ==================================================
+   HEADER STYLING
+================================================== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #003366;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  color: white;
 }
 
-
-h1 span {
-    font-weight: normal;
-    font-size: 0.5em;
+.branding svg {
+  height: 40px;
+  fill: white;
 }
 
-
-p {
-    font-size: 1px;
+.nav-links a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-
-/* 
-==================================================
-- Header 
-==================================================
-*/
-header{
-    position: fixed;
-    top: 0px;
-    padding: 20px 0;
-    width: 100%;
-    height: 130px;
-    color: #fff;
-    background-color: transparent;
-    transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
-    z-index:1000;
+/* ==================================================
+   SIDEBAR
+================================================== */
+.sidebar {
+  width: 250px;
+  background-color: #e6f0ff;
+  padding: 100px 1rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
 }
 
-header.stick {
-    height: 50px;
-    text-align: left;
-    padding: 10px 0 !Important;
-    transition: all 0.4s ease-in-out;   
-    -webkit-transition: all 0.4s ease-in-out;
-    background: rgba(255,255,255,.8);
+.sidebar h3 {
+  margin-bottom: 1rem;
+  color: #003366;
+  font-size: 1.5rem;
 }
 
-    .wrap-container {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .branding {
-        width: 25%;
-        float: left;
-        text-align: left;
-        height: 90px;
-        transition: all 0.4s ease-in-out;
-        -webkit-transition: all 0.4s ease-in-out;    
-    }
-    
-    .branding.stick {
-        height: 30px;
-        transition: all 0.4s ease-in-out;
-        -webkit-transition: all 0.4s ease-in-out;    
-    }
-
-        .logo-lg {
-            max-width: 150px;
-            height: 100%;
-        }
-
-        .logo-sm {
-            max-width: 150px;
-            height: 100%;
-            display: none;
-        }
-
-    .menu {
-        width: 75%;
-        float: left;
-        text-align: right;
-    }
-
-    .listMenu { 
-        display: none;
-    }
-
-/* just for the example, delete this */
-
-.stripe {
-    height: 400px;
-    position: relative;
+.sidebar p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
 }
 
-.stripe:first-child {
-    height: 600px;
-    position: relative;
+/* ==================================================
+   MAIN CONTENT
+================================================== */
+.main-content {
+  margin-left: 250px;
+  padding: 100px 2rem 2rem;
+  width: 100%;
 }
 
-.stripe:nth-child(even) {
-    background: #ecc6d9;
+.top-info {
+  margin-bottom: 2rem;
 }
 
-/* 
-==================================================
-- The Mobile Menu
-==================================================
-*/
-
-/* The Menu Button */
-.mobileMenuButton {
-    display: inline-block;
-    position: relative;
-    width: 30px;
-    height: 34px;
-    z-index: 1000;
-    border-radius: 4px;
-    transition: all 0.4s ease;
-    -webkit-transition: all 0.4s ease;
-    
+.top-info h1 {
+  font-size: 2rem;
 }
 
-.mobileMenuButton:hover {
-    border:1px solid #000;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 4px;
+.top-info p {
+  font-size: 1.2rem;
 }
 
-.mobileMenuButton:active {
-    border:1px solid #000;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 4px;
+.dashboard-frame {
+  width: 100%;
+  height: 500px;
+  border: 2px solid #003366;
+  background-color: #f0f8ff;
 }
 
-.mobileMenuButton:hover span  {
-    background: #fff;
-}
-.mobileMenuButton:hover span:before  {
-    background: #fff;
-}
-.mobileMenuButton:hover span:after  {
-    background: #fff;
+/* ==================================================
+   TABS
+================================================== */
+.tabs {
+  display: flex;
+  margin-top: 1rem;
 }
 
-
-.mobileMenuButton span {
-    margin-top: 50%;
-}
-.mobileMenuButton span, .mobileMenuButton span:before, .mobileMenuButton span:after {
-    cursor: pointer;
-    border-radius: 5px;
-    height: 4px;
-    width: 22px;
-    background: #262626;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    content: '';
-}
-.mobileMenuButton span:before {
-    top: -8px;
-}
-.mobileMenuButton span:after {
-    bottom: -8px; 
+.tab-button {
+  padding: 12px 24px;
+  background-color: #e6f0ff;
+  border: 1px solid #003366;
+  color: #001f3f;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
-
-
-/* The Menu */
-.mobileMenu { 
-    width: 240px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color: #d6d6c2;
-    z-index: 1200;
-    text-align: right;
-    padding-top: 100px ;
-    transition: all .3s ease-in-out;
-    
+.tab-button.active {
+  background-color: #003366;
+  color: white;
 }
 
-    .slideOut { 
-        margin-right: -240px;
-        transition: all .3s ease-in-out;
-    }
-
-    .slideIn { 
-        margin-right: 0px;
-    }
-
-.mobileMenu h2 {
-    font-family: sans-serif;
-    color: #333333;
-    font-size: 36px;
-    padding-right: 30px;
-    margin-bottom: 30px;
+.tab-content {
+  display: none;
+  padding: 1.2rem;
+  background-color: #e6f0ff;
+  margin-top: 1rem;
+  border: 1px solid #003366;
+  font-size: 1.1rem;
 }
 
-.mobileMenu ul {
-    list-style: none;
+.tab-content.active {
+  display: block;
 }
 
+/* ==================================================
+   MEDIA QUERIES
+================================================== */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
 
-.mobileMenu li { 
-    border-bottom: 1px dotted black;
-    padding: 0 30px;
-}
+  .main-content {
+    margin-left: 0;
+    padding: 80px 1rem;
+  }
 
-.mobileMenu li a { 
-    color: #333333;
-    line-height: inherit;
-    padding: 0;
-    font-weight: 600;
-    padding: 12px 0;
-    font-size: 15px;
-    text-decoration: none;
-    font-family: sans-serif;
-    display: block;
-    /* CSS Transition */
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    -ms-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-}
+  .nav-links a {
+    font-size: 0.9rem;
+  }
 
-.mobileMenu li a:hover {
-    color: #660066;
-    text-decoration: none;
-}
-
-
-.overlay {
-    background:rgba(0,0,0,0.7);
-    width:100%;
-    height:100%;
-    position:absolute;
-    top:0;
-    left:0;
-    display:none;
-    opacity: 0;
-    position: fixed;
-    transition: all .3s ease-in-out;
-    z-index: 1150;    
-}
-
-
-
-
-/* 
-==================================================
-- Media Query Mobile First Aproach
-==================================================
-*/
-@media (min-width:769px) {
-    h1 {
-        font-size: 2em;
-    }
-
-    .overlay {
-        display: none !important;
-    }
-    
-    .mobileMenu {
-        display: none;
-    }
-    
-    .wrap-container {
-            width: 80%;
-            margin: 0 auto;
-    }
-    
-    .mobileMenuButton {
-        display:none;
-    }
-    
-    .listMenu { 
-        display: inherit;
-    }
-
-    .listMenu li {
-        display: inline;
-        padding: 0px 15px;
-    }
-    
-
-    .listMenu li a {
-        color: #333333;
-        line-height: inherit;
-        padding: 0;
-        font-weight: 600;
-        font-size: 13px;
-        text-decoration: none;
-        font-family: sans-serif;
-        display: inline-block;
-        /* CSS Transition */
-        -webkit-transition: all .2s ease-in-out;
-        -moz-transition: all .2s ease-in-out;
-        -ms-transition: all .2s ease-in-out;
-        -o-transition: all .2s ease-in-out;
-        transition: all .2s ease-in-out;
-    }
-
-    
-    .listMenu li a:hover {
-        color: #660066;
-        text-decoration: none;
-    }
-
-    
-    .listMenu li:last-child a{
-        background: none;
-        border: 2px solid #333333;
-        border-radius: 3px;
-        color: #333333;
-        letter-spacing: -.001em;
-        padding: 5px 20px;
-        vertical-align: middle;
-    }
-
-    .listMenu li:last-child a:hover{
-        background: #660066;
-        border: 2px solid #660066;
-        color: #fff;
-        text-decoration: none;
-    }
-    
-    .mobileButton {
-        display: none;
-    }
-    
+  .tab-button {
+    font-size: 0.9rem;
+  }
 }
