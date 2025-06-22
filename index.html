@@ -82,12 +82,6 @@
     .top-info p {
       font-size: 1.2rem;
     }
-    .dashboard-frame {
-      width: 100%;
-      height: 500px;
-      border: 2px solid var(--accent);
-      background-color: #f0f8ff;
-    }
     .tabs {
       display: flex;
       margin-top: 1rem;
@@ -137,30 +131,64 @@
   <aside class="sidebar">
     <h3>Performance Stages</h3>
     <ul>
-  <li><strong>I:</strong> Streamlining part workflows will drive measurable cost savings.</li>
-  <li><strong>II:</strong> Reducing project delays will significantly improve budget adherence.</li>
-  <li><strong>III:</strong> Enhanced cross-team collaboration will amplify overall efficiency gains.</li>
-</ul>
+      <li><strong>I:</strong> Streamlining part workflows will drive measurable cost savings.</li>
+      <li><strong>II:</strong> Reducing project delays will significantly improve budget adherence.</li>
+      <li><strong>III:</strong> Enhanced cross-team collaboration will amplify overall efficiency gains.</li>
+    </ul>
   </aside>
   <main class="main-content">
     <section class="top-info">
       <h1>Aerospace Finance Insights</h1>
       <p>Every penny spent is worth saving. Maximize every cent—unlock data-driven insights into unit-cost savings and performance hypotheses. Updated June 6, 2025.</p>
     </section>
-    <iframe src="/dashboard" class="dashboard-frame" title="Dashboard"></iframe>
+    <!-- Embedded Tableau Visualization -->
+    <div class='tableauPlaceholder' id='viz1750573636576' style='position: relative'>
+      <noscript>
+        <a href='#'><img alt=' ' src='https://public.tableau.com/static/images/Un/UnitPriceBreakdown/PricePrediction/1_rss.png' style='border: none' /></a>
+      </noscript>
+      <object class='tableauViz' style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='site_root' value='' />
+        <param name='name' value='UnitPriceBreakdown/PricePrediction' />
+        <param name='tabs' value='yes' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='https://public.tableau.com/static/images/Un/UnitPriceBreakdown/PricePrediction/1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+        <param name='language' value='en-US' />
+      </object>
+    </div>
+    <script type='text/javascript'>
+      var divElement = document.getElementById('viz1750573636576');
+      var vizElement = divElement.getElementsByTagName('object')[0];
+      if (divElement.offsetWidth > 800) {
+        vizElement.style.width='1000px'; vizElement.style.height='850px';
+      } else if (divElement.offsetWidth > 500) {
+        vizElement.style.width='1000px'; vizElement.style.height='850px';
+      } else {
+        vizElement.style.width='100%'; vizElement.style.height='1150px';
+      }
+      var scriptElement = document.createElement('script');
+      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+      vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
     <div class="tabs">
       <button class="tab-button active" onclick="showTab('tab1')">Summary</button>
       <button class="tab-button" onclick="showTab('tab2')">Trends</button>
       <button class="tab-button" onclick="showTab('tab3')">Raw Logs</button>
     </div>
     <div id="tab1" class="tab-content active">
-      <p>This section summarizes key financial metrics.</p>
+      <p>About 55% of material-month observations are marked “FAVORABLE,” meaning a slight majority of items stayed within budget while roughly 45% experienced cost overruns. Unit prices generally climbed through 2022—reaching an average peak around $9,200—then declined steadily into early 2025, reflecting commodity-price volatility and recent cost easing.</p>
     </div>
     <div id="tab2" class="tab-content">
-      <p>Visual trends of cost evolution over time.</p>
+      <p>Unit prices for key aerospace materials climbed steadily from 2006 through a peak around late 2022—driven by commodity spikes—then eased into early 2025, while overhead rates stayed relatively flat and budget variances narrowed as costs cooled.</p>
     </div>
     <div id="tab3" class="tab-content">
-      <p>System-generated logs from ETL and pipeline runs.</p>
+      <p>June 21, 2025 11:43 PM SQL‐generated log.</p>
     </div>
   </main>
   <script>
